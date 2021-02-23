@@ -25,7 +25,8 @@ push:
 	docker push $(IMAGE_PREFIX)/$(IMAGE_NAME):latest
 
 kind:
-	kind create cluster --config kind.yaml
+	#kind create cluster --config kind.yaml
+	bash kind-with-registry.sh
 
 deploy:
 	export KUBECONFIG=$$(kind get kubeconfig-path --name="kind"); kubectl apply -f deploy/

@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: mutator
-          image: alexleonhardt/k8s-mutate-webhook:latest
+          image: localhost:5000/alexleonhardt/k8s-mutate-webhook:latest
           imagePullPolicy: Always
           resources:
             limits:
